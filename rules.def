@@ -1,0 +1,21 @@
+#define PATTERN_COUNT 1
+#define MUTEX_PATTERN_COUNT 0
+
+struct ScanContext
+{
+    Scanner* scanner;
+    const char* data;
+    std::size_t data_size;
+    void* user_data;
+    Match matches[PATTERN_COUNT];
+    std::uint64_t mutex_matches[MUTEX_PATTERN_COUNT];
+};
+
+static bool rule_TextFileWithConfidentialInfo(const ScanContext* ctx)
+{
+return match_string(ctx, 0ul);
+}
+
+static auto rules = std::array<Rule, 1>{
+Rule{"TextFileWithConfidentialInfo", RuleVisibility::Public, &rule_TextFileWithConfidentialInfo, RuleMatch::NotEvaluated},
+};

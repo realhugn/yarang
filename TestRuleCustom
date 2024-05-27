@@ -1,0 +1,14 @@
+rule TextFileWithConfidentialInfo
+{
+    meta:
+        description = "Matches text files containing 'confidential information'"
+        author = "Your Name"
+        date = "2024-05-27"
+        version = "1.0"
+
+    strings:
+        $confidential_info = "real"
+
+    condition:
+        $confidential_info
+}

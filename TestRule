@@ -1,0 +1,11 @@
+rule MatchEverything
+{
+    meta:
+        description = "This rule matches everything"
+        author = "Your Name"
+        date = "2024-05-27"
+        version = "1.0"
+
+    condition:
+        true
+}
