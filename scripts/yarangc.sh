@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 generate_asm_file() {
     INCBIN_LINE=""
     if [ -e "$2" ]; then
